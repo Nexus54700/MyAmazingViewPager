@@ -17,21 +17,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //3 - Configure ViewPager
-        this.configureViewPager();
+        this.configureViewPagerAndTabs();
     }
 
     private void configureViewPager(){
         // 1 - Get ViewPager from layout
-        ViewPager pager = (ViewPager)findViewById(R.id.activity_main_viewpager);
+        ViewPager pager = findViewById(R.id.activity_main_viewpager);
         // 2 - Set Adapter PageAdapter and glue it together
         pager.setAdapter(new PageAdapter(getSupportFragmentManager(), getResources().getIntArray(R.array.colorPagesViewPager)) {
         });
     }
     private void configureViewPagerAndTabs(){
         //Get ViewPager from layout
-        ViewPager pager = (ViewPager)findViewById(R.id.activity_main_viewpager);
+        ViewPager pager = findViewById(R.id.activity_main_viewpager);
         //Set Adapter PageAdapter and glue it together
         pager.setAdapter(new PageAdapter(getSupportFragmentManager(), getResources().getIntArray(R.array.colorPagesViewPager)));
+
+
 
         // 1 - Get TabLayout from layout
         TabLayout tabs= findViewById(R.id.activity_main_tabs);
